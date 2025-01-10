@@ -5,9 +5,12 @@
 
 // CMSIS Libs
 #include "arm_nnfunctions.h"
+
+// CIFAR10 related
 #include "arm_nnexamples_cifar10_parameter.h"
 #include "arm_nnexamples_cifar10_weights.h"
 #include "arm_nnexamples_cifar10_inputs.h"
+#include "cifar10_classes.h"
 
 #ifdef _RTE_
 #include "RTE_Components.h"
@@ -15,21 +18,6 @@
 #include "EventRecorder.h"
 #endif
 #endif
-
-//Define the classes
-
-static char airplane[] = "airplane";
-static char automobile[] = "automobile";
-static char bird[] = "bird";
-static char cat[] = "cat";
-static char deer[] = "deer";
-static char dog[] = "dog";
-static char frog[] = "frog";
-static char horse[] = "horse";
-static char ship[] = "ship";
-static char truck[] = "truck";
-
-static char* cifar10_classes[] = {airplane, automobile, bird, cat, deer, dog, frog, horse, ship, truck};
 
 // include the input and weights
 
