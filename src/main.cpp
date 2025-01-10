@@ -1,6 +1,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <Arduino.h>
+#include <string.h>
 
 // CMSIS Libs
 #include "arm_nnfunctions.h"
@@ -14,6 +15,21 @@
 #include "EventRecorder.h"
 #endif
 #endif
+
+//Define the classes
+
+static char airplane[] = "airplane";
+static char automobile[] = "automobile";
+static char bird[] = "bird";
+static char cat[] = "cat";
+static char deer[] = "deer";
+static char dog[] = "dog";
+static char frog[] = "frog";
+static char horse[] = "horse";
+static char ship[] = "ship";
+static char truck[] = "truck";
+
+static char* cifar10_classes[] = {airplane, automobile, bird, cat, deer, dog, frog, horse, ship, truck};
 
 // include the input and weights
 
@@ -104,8 +120,8 @@ void setup() {
 void loop() {
   for (int i = 0; i < 10; i++)
   {
-      printf("%d: %d\n", i, output_data[i]);
+      printf("%s: %d\n", cifar10_classes[i], output_data[i]);
   }
   printf("Results printed!\n");
-  delay(1000);
+  delay(5000);
 }
