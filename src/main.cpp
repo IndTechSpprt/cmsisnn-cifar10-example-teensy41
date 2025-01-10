@@ -99,11 +99,6 @@ void setup() {
                              output_data, (q15_t *) img_buffer1);
 
   arm_softmax_q7(output_data, 10, output_data);
-
-  for (int i = 0; i < 10; i++)
-  {
-      printf("%d: %d\n", i, output_data[i]);
-  }
 }
 
 void loop() {
